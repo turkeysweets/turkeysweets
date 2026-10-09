@@ -6,7 +6,14 @@ var CONFIG = {
   email: 'turkeysweets.albaha@gmail.com',
   instagramUser: 'turkeysweets.albaha',
   instagramUrl: 'https://www.instagram.com/turkeysweets.albaha/',
-  hungerStationUrl: 'https://hungerstation.com/sa-ar/restaurants/regions/الباحة/الحاوية/حلويات-تركيا-117851'
+  hungerStationUrl: 'https://hungerstation.com/sa-ar/restaurants/regions/الباحة/الحاوية/حلويات-تركيا-117851',
+  // Google Maps reviews (update by hand). Replace both links with the exact Google links when you have them:
+  //   read all:  the "Share" link from the Google Maps listing
+  //   write one: https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+  googleRating: 4.1,
+  googleCount: '2,700',
+  googleReviewsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Turkey Sweets Al-Hawiyah King Abdulaziz Road Al-Baha 65525'),
+  googleWriteUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Turkey Sweets Al-Hawiyah King Abdulaziz Road Al-Baha 65525')
 };
 
 /* ---------- MENU: categories, each with items (prices in SAR) ----------
@@ -179,4 +186,20 @@ var SERVICES = [
     name_ar: 'ضيافة وتجهيز المناسبات', name_en: 'Catering',
     desc_ar: 'تجهيز الحلويات والضيافة للمكاتب والاستقبالات والفعاليات.',
     desc_en: 'Sweets and hospitality platters for offices, receptions and events.' }
+];
+
+/* ---------- REVIEWS: pasted by hand from Google Maps (customer names as shown on Google) ----------
+   text: original wording, leave '' for a rating-only review.   featured: true shows it as a large dark card.
+   sub: optional {food, service, atmosphere} ratings out of 5.   ago: when it was posted, as Google showed it (not displayed). */
+var REVIEWS = [
+  { id: 'r1',  name: 'Siddique Mohd Arshad',     rating: 5, ago: '6 months ago', text: 'In albaha very well shop for sweets. All kind of arabic sweet available' },
+  { id: 'r2',  name: 'Bashir Khan',              rating: 5, text: 'A great market. All in one' },
+  { id: 'r3',  name: 'Muhammad Raza Shujaat',    rating: 5, ago: 'a year ago', text: 'Simply Superb.....!!! Their Cream is Superb....!!!', sub: { food: 5, service: 5, atmosphere: 5 } },
+  { id: 'r4',  name: 'MD Shipon',                rating: 5, ago: '2 months ago', text: 'Testy All Sweet' },
+  { id: 'r5',  name: 'karl c.',                  rating: 5, ago: '5 years ago', text: 'Good deals and good taste for the Turkish delights. I tried also two cakes (mini-pie shape: pistachios and nuts&caramel)' },
+  { id: 'r6',  name: 'Mohammed Shaji Ur Rahman', rating: 5, ago: '4 years ago', featured: true, text: 'Best cakes shop in Al Baha. Their chocolate cake is the top in town. \uD83D\uDC4D' },
+  { id: 'r7',  name: 'Kash Khan',                rating: 5, ago: 'a year ago', featured: true, text: 'Best sweets in Baha. Highly recommend' },
+  { id: 'r8',  name: 'T X B T X B',              rating: 5, ago: '6 years ago', text: 'Very nice Konafah.' },
+  { id: 'r9',  name: 'Mohmed Ahmed',             rating: 5, text: '' },
+  { id: 'r10', name: 'Sajjad Bilal',             rating: 5, ago: '7 years ago', text: 'I love it because of only its taste which is very good' }
 ];

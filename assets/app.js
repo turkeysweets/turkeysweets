@@ -27,6 +27,17 @@
       pd_custom: 'علب هدايا وصواني أفراح وتورتات حسب الطلب وضيافة للمناسبات من حلويات تركيا في الباحة.',
       pt_branches: 'فروعنا | حلويات تركيا',
       pd_branches: 'فروع حلويات تركيا في الباحة وبلجرشي والمندق: العناوين وأرقام الهاتف وساعات العمل.',
+      pt_reviews: 'آراء العملاء | حلويات تركيا',
+      pd_reviews: 'تقييم حلويات تركيا على خرائط جوجل 4.1 من أكثر من 2,700 تقييم. اقرأوا آراء العملاء في الكنافة والجاتوه والحلويات الشرقية.',
+      reviewsTitle: 'آراء عملائنا',
+      reviewsSub: 'مختارات من أعلى تقييمات عملائنا على خرائط جوجل، بأسمائهم كما تظهر هناك.',
+      rvListTitle: 'تقييمات العملاء',
+      rvBasedOn: function (n) { return 'بناءً على أكثر من ' + n + ' تقييم على خرائط جوجل'; },
+      rvReadAll: 'اقرأ كل التقييمات على جوجل', rvWrite: 'اكتب تقييمًا',
+      rvStarsAria: function (n) { return n + ' من 5 نجوم'; },
+      rvOriginal: 'التقييمات منشورة بنصها الأصلي كما كُتبت على خرائط جوجل.',
+      rvNoText: 'تقييم بالنجوم فقط',
+      rvFood: 'الطعام', rvService: 'الخدمة', rvAtmos: 'الأجواء',
       pcatDesc: function (name, n) { return name + ' من حلويات تركيا: ' + n + ' صنف بالصور والأسعار. اطلبوا عبر واتساب أو هنقرستيشن.'; },
       homeMenuSub: 'اختاروا القسم الذي يعجبكم وتصفّحوا الأصناف بالصور والأسعار.',
       viewFullMenu: 'عرض القائمة الكاملة',
@@ -40,6 +51,7 @@
       skip: 'انتقل إلى المحتوى',
       logoAria: 'حلويات تركيا - الصفحة الرئيسية', navAria: 'التنقل الرئيسي',
       navAbout: 'من نحن', navMenu: 'القائمة', navBranches: 'الفروع', navCustom: 'طلبات خاصة', navContact: 'تواصل معنا', navOrder: 'اطلب الآن',
+      navReviews: 'آراء العملاء',
       langBtn: 'EN', langAria: 'Switch to English', langBtnLang: 'en',
       menuOpen: 'فتح القائمة', menuClose: 'إغلاق القائمة', waFloat: 'اطلب عبر واتساب',
       openBadge: 'مفتوح حتى منتصف الليل',
@@ -88,6 +100,17 @@
       pd_custom: 'Gift boxes, wedding trays, custom cakes and event catering from Turkey Sweets in Al-Baha.',
       pt_branches: 'Our branches | Turkey Sweets',
       pd_branches: 'Turkey Sweets branches in Al-Baha, Baljurashi and Al-Mandaq: addresses, phone numbers and opening hours.',
+      pt_reviews: 'Customer reviews | Turkey Sweets',
+      pd_reviews: 'Turkey Sweets is rated 4.1 on Google Maps from 2,700+ reviews. Read what customers say about our kunafa, cakes and Eastern sweets.',
+      reviewsTitle: 'What our customers say',
+      reviewsSub: 'A selection of our top-rated reviews on Google Maps, shown with each customer\u2019s name as it appears there.',
+      rvListTitle: 'Customer reviews',
+      rvBasedOn: function (n) { return 'Based on ' + n + '+ reviews on Google Maps'; },
+      rvReadAll: 'Read all reviews on Google', rvWrite: 'Write a review',
+      rvStarsAria: function (n) { return n + ' out of 5 stars'; },
+      rvOriginal: 'Reviews appear in their original wording, as posted on Google Maps.',
+      rvNoText: 'Star rating only',
+      rvFood: 'Food', rvService: 'Service', rvAtmos: 'Atmosphere',
       pcatDesc: function (name, n) { return name + ' from Turkey Sweets: ' + n + (n === 1 ? ' item' : ' items') + ' with photos and prices. Order by WhatsApp or HungerStation.'; },
       homeMenuSub: 'Pick a category and browse every item with photos and prices.',
       viewFullMenu: 'View the full menu',
@@ -101,6 +124,7 @@
       skip: 'Skip to content',
       logoAria: 'Turkey Sweets - back to top', navAria: 'Main navigation',
       navAbout: 'About', navMenu: 'Menu', navBranches: 'Branches', navCustom: 'Custom Orders', navContact: 'Contact', navOrder: 'Order Now',
+      navReviews: 'Reviews',
       langBtn: 'عربي', langAria: 'التبديل إلى العربية', langBtnLang: 'ar',
       menuOpen: 'Open menu', menuClose: 'Close menu', waFloat: 'Order on WhatsApp',
       openBadge: 'Open until midnight',
@@ -153,7 +177,9 @@
     camera: '<rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8.5 6l1.2-2h4.6l1.2 2"/>',
     map: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
     phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
-    pin: '<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>'
+    pin: '<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+    pen: '<path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>'
   };
   function icon(n) { return SVG_OPEN + (ICONS[n] || '') + '</svg>'; }
 
@@ -379,7 +405,7 @@
       var c = CATS[CATID];
       return { title: pick(c, 'name') + ' | ' + t('brand'), desc: t('pcatDesc')(pick(c, 'name'), c.items.length) };
     }
-    var k = { about: 'about', menu: 'menu', custom: 'custom', branches: 'branches' }[PAGE];
+    var k = { about: 'about', menu: 'menu', custom: 'custom', branches: 'branches', reviews: 'reviews' }[PAGE];
     return k ? { title: t('pt_' + k), desc: t('pd_' + k) } : { title: t('title'), desc: t('metaDesc') };
   }
 
@@ -415,6 +441,75 @@
         '<div class="actions"><a class="btn btn-gold btn-sm" href="tel:' + esc(b.tel) + '">' + icon('phone') + esc(t('call')) + '</a>' + map + '</div></article>';
     }).join('');
     observeReveals(box.parentNode, instant);
+  }
+
+  /* ---------- Reviews ---------- */
+  function starsHTML(r, cls) {
+    var p = Math.round(Math.max(0, Math.min(5, r)) / 5 * 100);
+    return '<span class="rv-stars ltr' + (cls ? ' ' + cls : '') + '" role="img" aria-label="' + esc(t('rvStarsAria')(r)) + '" style="--p:' + p + '%">\u2605\u2605\u2605\u2605\u2605</span>';
+  }
+  function whoHTML(r) {
+    var ch = (Array.from(String(r.name).trim())[0] || '').toUpperCase();
+    return '<div class="rv-who"><span class="rv-av" aria-hidden="true">' + esc(ch) + '</span><div><h3 class="rv-name" dir="auto">' + esc(r.name) + '</h3>' + starsHTML(r.rating, 'sm') + '</div></div>';
+  }
+  function rvFeat(r) {
+    return '<figure class="rv-feat" dir="ltr"><blockquote class="rv-quote" lang="en" dir="auto">' + esc(r.text) + '</blockquote>' + whoHTML(r) + '</figure>';
+  }
+  function rvCard(r) {
+    var body = r.text
+      ? '<p class="rv-text" lang="en" dir="auto">' + esc(r.text) + '</p>'
+      : '<p class="rv-text rv-empty">' + esc(t('rvNoText')) + '</p>';
+    var meta = '';
+    if (r.sub) {
+      meta = '<ul class="rv-meta">' + [['food', 'rvFood'], ['service', 'rvService'], ['atmosphere', 'rvAtmos']].filter(function (k) { return r.sub[k[0]] != null; }).map(function (k) {
+        return '<li>' + esc(t(k[1])) + ' <bdi>' + esc(r.sub[k[0]]) + '/5</bdi></li>';
+      }).join('') + '</ul>';
+    }
+    return '<article class="card rv-card"' + (r.text ? ' dir="ltr"' : '') + '>' + whoHTML(r) + body + meta + '</article>';
+  }
+  function renderReviews(instant) {
+    var sum = $('#rvSummary');
+    if (!sum) return;
+    var rating = CONFIG.googleRating;
+    sum.innerHTML =
+      '<div class="rv-score"><b class="rv-num">' + esc(rating) + '</b>' + starsHTML(rating) + '</div>' +
+      '<div class="rv-sum-copy"><p class="rv-based">' + esc(t('rvBasedOn')(CONFIG.googleCount)) + '</p>' +
+      '<div class="rv-actions">' +
+      '<a class="btn btn-gold" href="' + esc(CONFIG.googleReviewsUrl) + '" target="_blank" rel="noopener noreferrer">' + icon('star') + esc(t('rvReadAll')) + '</a>' +
+      '<a class="btn btn-ghost" href="' + esc(CONFIG.googleWriteUrl) + '" target="_blank" rel="noopener noreferrer">' + icon('pen') + esc(t('rvWrite')) + '</a>' +
+      '</div></div>';
+    var withText = REVIEWS.filter(function (r) { return r.text; }), noText = REVIEWS.filter(function (r) { return !r.text; });
+    var feat = $('#rvFeatured'), grid = $('#rvGrid');
+    if (feat) feat.innerHTML = withText.filter(function (r) { return r.featured; }).map(rvFeat).join('');
+    if (grid) grid.innerHTML = withText.filter(function (r) { return !r.featured; }).concat(noText).map(rvCard).join('');
+    observeReveals(document, instant);
+  }
+
+  /* Pages that were built before the Reviews page get its link added automatically */
+  function ensureReviewsLinks() {
+    function make(extra) {
+      var a = document.createElement('a');
+      a.setAttribute('href', 'reviews.html'); a.setAttribute('data-i18n', 'navReviews');
+      a.textContent = t('navReviews');
+      return a;
+    }
+    function after(root, sel, node, wrap) {
+      var ref = $(sel, root);
+      if (!ref) return false;
+      var host = wrap ? ref.parentNode : ref;
+      host.parentNode.insertBefore(wrap ? (function () { var li = document.createElement('li'); li.appendChild(node); return li; })() : node, host.nextSibling);
+      return true;
+    }
+    var nav = $('.nav-links');
+    if (nav && !$('a[href^="reviews.html"]', nav)) after(nav, 'a[href^="custom-orders.html"]', make(), false);
+    var mn = $('#mnav nav');
+    if (mn && !$('a[href^="reviews.html"]', mn)) {
+      if (after(mn, 'a[href^="custom-orders.html"]', make(), false)) {
+        $$('a', mn).forEach(function (a, i) { a.style.setProperty('--i', i); });
+      }
+    }
+    var ft = $('footer ul');
+    if (ft && !$('a[href^="reviews.html"]', ft)) after(ft, 'a[href^="custom-orders.html"]', make(), true);
   }
 
   /* ---------- Language system ---------- */
@@ -484,7 +579,7 @@
     if (persist) saveLang(lang);
     updateSeo();
     renderCatTiles(true); renderTabs(); renderMenu(); renderPager(); renderPageBits();
-    renderServices(true); renderBranches(true);
+    renderServices(true); renderBranches(true); renderReviews(true);
     injectSlots(document);
     applyI18n();
     decorateLinks();
@@ -643,7 +738,8 @@
     injectSlots(document);
     setupReveal();
     renderCatTiles(false); renderTabs(); renderMenu(); renderPager(); renderPageBits();
-    renderServices(false); renderBranches(false);
+    renderServices(false); renderBranches(false); renderReviews(false);
+    ensureReviewsLinks();
     injectSlots(document);
     applyI18n(); updateSeo(); decorateLinks();
     setupMenuCards(); setupMobileMenu(); setupScroll(); setupCounters(); setupParticles();
