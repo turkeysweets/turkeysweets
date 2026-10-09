@@ -1,0 +1,70 @@
+/* Turkey Sweets: cart, checkout and branches map.
+   Built only from the site's own tokens (--choc, --gold, --gold-2, --cream, --fb, --r). */
+
+/* ---------- Cart button in the navbar (reuses .lang so it matches EN/AR) ---------- */
+.ts-cart-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:44px;padding:6px 10px}
+.ts-cart-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ts-cart-count{position:absolute;top:-6px;inset-inline-end:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--grad-gold);color:var(--choc);font:700 .72rem/20px var(--fb);text-align:center;transform:scale(0);transition:transform .25s var(--ease)}
+.ts-cart-count.on{transform:scale(1)}
+.ts-cart-btn.bump{animation:ts-bump .35s var(--ease)}
+@keyframes ts-bump{40%{transform:scale(1.14)}}
+
+/* ---------- Drawer ---------- */
+.ts-ov{position:fixed;inset:0;z-index:400;background:rgba(14,26,24,.55);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.ts-ov.open{opacity:1;visibility:visible}
+.ts-cart{position:fixed;top:0;bottom:0;inset-inline-end:0;z-index:401;width:min(420px,100vw);display:flex;flex-direction:column;background:linear-gradient(160deg,var(--choc-2),var(--choc));color:var(--cream);border-inline-start:1px solid rgba(191,214,210,.5);font-family:var(--fb);transform:translateX(100%);visibility:hidden;transition:transform .35s var(--ease),visibility .35s}
+[dir="rtl"] .ts-cart{transform:translateX(-100%)}
+.ts-cart.open{transform:none;visibility:visible}
+body.ts-lock{overflow:hidden}
+
+.ts-cart-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid rgba(191,214,210,.3)}
+.ts-cart-head h2{margin:0;font-family:var(--fh);font-size:1.7rem;color:var(--gold-2)}
+.ts-cart-x{display:grid;place-items:center;width:40px;height:40px;padding:0;border-radius:50%;border:1.5px solid var(--gold);background:transparent;color:var(--gold-2);cursor:pointer;transition:background .3s}
+.ts-cart-x:hover{background:rgba(141,177,171,.18)}
+.ts-cart-x svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round}
+
+.ts-cart-body{flex:1;overflow-y:auto;padding:6px 22px}
+.ts-empty{display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 12px;text-align:center;color:rgba(246,249,248,.82)}
+.ts-empty svg{width:46px;height:46px;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.ts-empty p{margin:0;line-height:1.7}
+
+.ts-line{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:16px 0;border-bottom:1px solid rgba(191,214,210,.22)}
+.ts-line-name{font-weight:600;line-height:1.5}
+.ts-line-price{font-size:.9rem;color:rgba(246,249,248,.7)}
+.ts-line-sum{align-self:center;font-weight:600;color:var(--gold-2);white-space:nowrap}
+.ts-qty{display:inline-flex;align-items:center;margin-top:8px;border:1.5px solid var(--gold);border-radius:999px}
+.ts-qty button{width:36px;height:36px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--cream);font:600 1.15rem/1 var(--fb);cursor:pointer;transition:background .3s}
+.ts-qty button:hover{background:rgba(141,177,171,.22)}
+.ts-qty span{min-width:28px;text-align:center;font-weight:600}
+.ts-rm,.ts-clear{border:0;background:none;color:var(--gold-2);font:inherit;font-size:.9rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.ts-rm{align-self:end;justify-self:end;padding:4px 0}
+.ts-rm:hover,.ts-clear:hover{color:var(--cream)}
+
+.ts-cart-foot{display:flex;flex-direction:column;gap:14px;padding:18px 22px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(191,214,210,.3)}
+.ts-cart-foot[hidden],.ts-total[hidden]{display:none}
+.ts-total{display:flex;justify-content:space-between;align-items:baseline;font-size:1.1rem;font-weight:600}
+.ts-total span:last-child{font-family:var(--fh);font-size:1.6rem;color:var(--gold-2)}
+.ts-actions{display:flex;gap:10px}
+.ts-actions .btn{flex:1 1 0;min-width:0;padding-inline:.8em}
+.ts-actions .btn-ghost{color:var(--cream)}
+.ts-clear{align-self:center}
+
+.ts-toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:500;max-width:90vw;padding:11px 22px;border-radius:999px;background:var(--choc);color:var(--cream);border:1.5px solid var(--gold);font:500 .95rem/1.4 var(--fb);box-shadow:0 10px 24px rgba(30,50,48,.4);transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease)}
+.ts-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Branches map (replaces the "Map coming soon" slot) ---------- */
+.ts-map{border-radius:24px;overflow:hidden;background:var(--choc);color:var(--cream);border:1px solid rgba(191,214,210,.5)}
+.ts-map>svg{display:block;width:100%;height:auto}
+.ts-map svg text{font-family:var(--fb)}
+.ts-map svg a{cursor:pointer}
+.ts-map svg a:hover path,.ts-map svg a:focus-visible path{fill:#BFD6D2}
+.ts-map svg a:focus-visible{outline:none}
+.ts-map-note{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0;padding:12px 20px;border-top:1px solid rgba(191,214,210,.3);font-size:.9rem;color:rgba(246,249,248,.75)}
+
+@media (max-width:720px){
+  .ts-map>svg{min-height:250px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ts-cart,.ts-ov,.ts-toast,.ts-cart-count{transition:none}
+  .ts-cart-btn.bump{animation:none}
+}

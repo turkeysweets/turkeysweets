@@ -261,6 +261,27 @@
     return wa(t('waItem')(sz ? name + ' (' + pick(sz, 'label') + ')' : name));
   }
 
+  /* Cart data for the "Add to order" button (the WhatsApp link stays as a fallback) */
+  function cartData(it, idx) {
+    var sz = selSize(it, idx), has = !!sz;
+    var price = has ? sz.price : it.price;
+    return {
+      id: it.id + (has ? ':' + (idx || 0) : ''),
+      name: it.name_ar + (has ? ' (' + sz.label_ar + ')' : ''),
+      nameEn: it.name_en + (has ? ' (' + sz.label_en + ')' : ''),
+      price: (price == null || isNaN(price)) ? '' : price
+    };
+  }
+  function cartAttrs(it, idx) {
+    var c = cartData(it, idx);
+    return ' data-cart-add data-id="' + esc(c.id) + '" data-name="' + esc(c.name) + '" data-name-en="' + esc(c.nameEn) + '" data-price="' + esc(c.price) + '"';
+  }
+  function setCartAttrs(el, it, idx) {
+    var c = cartData(it, idx);
+    el.setAttribute('data-id', c.id); el.setAttribute('data-name', c.name);
+    el.setAttribute('data-name-en', c.nameEn); el.setAttribute('data-price', c.price);
+  }
+
   function itemImages(it) { return it.images && it.images.length ? it.images : (it.image ? [it.image] : []); }
 
   function thumbsHTML(it) {
@@ -289,7 +310,7 @@
     return '<article class="card menu-card" data-id="' + esc(it.id) + '" style="--i:' + i + '">' + media +
       '<div class="card-body"><h3>' + esc(name) + '</h3><p>' + esc(pick(it, 'desc')) + '</p>' + sizes +
       '<div class="card-foot"><span><span class="price">' + esc(fmtPrice(it.price)) + '</span>' + unit + '</span>' +
-      '<a class="btn btn-gold btn-sm" href="' + esc(orderHref(it, 0)) + '" target="_blank" rel="noopener noreferrer">' + esc(t('addToOrder')) + '</a></div></div></article>';
+      '<a class="btn btn-gold btn-sm" href="' + esc(orderHref(it, 0)) + '" target="_blank" rel="noopener noreferrer"' + cartAttrs(it, 0) + '>' + esc(t('addToOrder')) + '</a></div></div></article>';
   }
 
   /* Category tiles (home page + menu page) */
@@ -375,6 +396,7 @@
       $$('.chip', card).forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
       $('.price', card).textContent = fmtPrice(sz ? sz.price : it.price);
       $('.btn', card).setAttribute('href', orderHref(it, idx));
+      setCartAttrs($('.btn', card), it, idx);
     });
     var input = $('#menuSearch'), timer;
     if (input) {
@@ -510,6 +532,24 @@
     }
     var ft = $('footer ul');
     if (ft && !$('a[href^="reviews.html"]', ft)) after(ft, 'a[href^="custom-orders.html"]', make(), true);
+  }
+
+  /* Every page gets a Home link at the start of the menu */
+  function ensureHomeLinks() {
+    function make() {
+      var a = document.createElement('a');
+      a.setAttribute('href', 'index.html'); a.setAttribute('data-i18n', 'navHome');
+      a.textContent = t('navHome');
+      if (PAGE === 'home') a.setAttribute('aria-current', 'page');
+      return a;
+    }
+    var nav = $('.nav-links');
+    if (nav && !$('a[href^="index.html"]', nav)) nav.insertBefore(make(), nav.firstChild);
+    var mn = $('#mnav nav');
+    if (mn && !$('a[href^="index.html"]', mn)) {
+      mn.insertBefore(make(), mn.firstChild);
+      $$('a', mn).forEach(function (a, i) { a.style.setProperty('--i', i); });
+    }
   }
 
   /* ---------- Language system ---------- */
@@ -739,7 +779,7 @@
     setupReveal();
     renderCatTiles(false); renderTabs(); renderMenu(); renderPager(); renderPageBits();
     renderServices(false); renderBranches(false); renderReviews(false);
-    ensureReviewsLinks();
+    ensureReviewsLinks(); ensureHomeLinks();
     injectSlots(document);
     applyI18n(); updateSeo(); decorateLinks();
     setupMenuCards(); setupMobileMenu(); setupScroll(); setupCounters(); setupParticles();
@@ -757,4 +797,21 @@
     var all = document.querySelectorAll('.reveal,.hl');
     for (var i = 0; i < all.length; i++) { all[i].style.opacity = 1; all[i].style.transform = 'none'; }
   }
+})();
+
+/* Cart, checkout and branch map: loaded once on every page that uses this file */
+(function () {
+  if (window.TSCart || document.getElementById('ts-extras-js')) return;
+  var cs = document.currentScript;
+  var base = cs && cs.src ? cs.src.replace(/[^\/]*$/, '') : 'assets/';
+  var css = document.createElement('link');
+  css.rel = 'stylesheet'; css.href = base + 'extras.css'; css.id = 'ts-extras-css';
+  function js() {
+    if (document.getElementById('ts-extras-js')) return;
+    var sc = document.createElement('script');
+    sc.id = 'ts-extras-js'; sc.src = base + 'extras.js';
+    document.body.appendChild(sc);
+  }
+  css.onload = js; css.onerror = js;
+  document.head.appendChild(css);
 })();

@@ -157,15 +157,17 @@ var BRANCHES = [
   { id: 'baljurashi', main: false,
     name_ar: 'فرع بلجرشي', name_en: 'Baljurashi Branch',
     area_ar: 'الأصالة', area_en: 'Al-Asalah',
-    address_ar: null, address_en: null,
+    address_ar: 'بلجرشي 65651، المملكة العربية السعودية، VH8F+2G6',
+    address_en: 'VH8F+2G6, Baljurashi 65651, Saudi Arabia',
     phone: '+966 55 348 5577', tel: '+966553485577',
-    mapUrl: '' },
+    mapUrl: 'https://www.google.com/maps/place/%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA+%D8%AA%D8%B1%D9%83%D9%8A%D8%A7%E2%80%AD/@20.1445719,41.2891635,17z/data=!4m11!1m7!3m6!1s0x15ef5dc707782787:0x6bc44fbb10211998!2z2K3ZhNmI2YrYp9iqINiq2LHZg9mK2Kc!8m2!3d19.8650317!4d41.5737653!16s%2Fg%2F11cs1kqlzy!3m2!1s0x15ef5dc707782787:0x6bc44fbb10211998!16s%2Fg%2F11cs1kqlzy?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D' },
   { id: 'mandaq', main: false,
     name_ar: 'فرع المندق', name_en: 'Al-Mandaq Branch',
     area_ar: '', area_en: '',
-    address_ar: null, address_en: null,
+    address_ar: 'المندق 65749، المملكة العربية السعودية، 47VR+RMH',
+    address_en: '47VR+RMH, Al-Mandaq 65749, Saudi Arabia',
     phone: '+966 55 348 5599', tel: '+966553485599',
-    mapUrl: '' }
+    mapUrl: 'https://www.google.com/maps/place/%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA+%D8%AA%D8%B1%D9%83%D9%8A%D8%A7+%D8%A7%D9%84%D9%85%D9%86%D8%AF%D9%82%E2%80%AD/@20.1445719,41.2891635,17z/data=!4m14!1m7!3m6!1s0x15ef5dc707782787:0x6bc44fbb10211998!2z2K3ZhNmI2YrYp9iqINiq2LHZg9mK2Kc!8m2!3d19.8650317!4d41.5737653!16s%2Fg%2F11cs1kqlzy!3m5!1s0x15ef4bce779494df:0x1f57f9940d86ba82!8m2!3d20.1445719!4d41.2917438!16s%2Fg%2F11f6cq9mzd?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D' }
 ];
 
 /* ---------- Custom orders & celebrations ---------- */
