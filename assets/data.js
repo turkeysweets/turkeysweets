@@ -4,8 +4,8 @@ var CONFIG = {
   phoneMain: '+966553485544',
   phoneMainDisplay: '055 348 5544',
   email: 'turkeysweets.albaha@gmail.com',
-  instagramUser: 'turkeysweets.albaha',
-  instagramUrl: 'https://www.instagram.com/turkeysweets.albaha/',
+  instagramUser: 't.sweet1990',
+  instagramUrl: 'https://www.instagram.com/t.sweet1990/',
   hungerStationUrl: 'https://hungerstation.com/sa-ar/restaurants/regions/الباحة/الحاوية/حلويات-تركيا-117851',
   // Google Maps reviews (update by hand). Replace both links with the exact Google links when you have them:
   //   read all:  the "Share" link from the Google Maps listing
